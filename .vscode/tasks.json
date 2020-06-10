@@ -5,15 +5,44 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "C/C++: clang++ build active file",
+            "label": "Build server",
             "command": "/usr/bin/clang++",
             "args": [
                 "-std=c++17",
                 "-stdlib=libc++",
+                "-Wall",
+                "-Wno-nullability-completeness",
                 "-g",
-                "${file}",
                 "-o",
-                "${workspaceFolder}/bin/${fileBasenameNoExtension}"
+                "${workspaceFolder}/bin/server",
+                "${workspaceFolder}/src/server.cpp",
+                "${workspaceFolder}/src/chat.cpp"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "Build client",
+            "command": "/usr/bin/clang++",
+            "args": [
+                "-std=c++17",
+                "-stdlib=libc++",
+                "-Wall",
+                "-Wno-nullability-completeness",
+                "-g",
+                "-o",
+                "${workspaceFolder}/bin/client",
+                "${workspaceFolder}/src/client.cpp",
+                "${workspaceFolder}/src/chat.cpp"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"

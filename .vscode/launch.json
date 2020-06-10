@@ -5,17 +5,39 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "clang++ - Build and debug active file",
+            "name": "Server",
             "type": "cppdbg",
             "request": "launch",
-            "program":"${workspaceFolder}/bin/${fileBasenameNoExtension}",
+            "program":"${workspaceFolder}/bin/server",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
-            "preLaunchTask": "C/C++: clang++ build active file"
+            "preLaunchTask": "Build server"
+        },
+        {
+            "name": "Client",
+            "type": "cppdbg",
+            "request": "launch",
+            "program":"${workspaceFolder}/bin/client",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "Build client"
+       }
+    ],
+       "compounds": [
+        {
+            "name": "Server/Client",
+            "configurations": [
+                "Server",
+                "Client"
+            ]
         }
-    ]
+    ] 
 }

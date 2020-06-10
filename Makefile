@@ -1,10 +1,10 @@
 all: server client
 
 server:
-	g++	-Wall -g -o bin/server src/server.cpp
+	g++	-Wall  -Wno-nullability-completeness	-g -o bin/server src/server.cpp src/chat.cpp
 
 client:
-	g++	-Wall -g -o bin/client src/client.cpp
+	g++	-Wall  -Wno-nullability-completeness	-g -o bin/client src/client.cpp src/chat.cpp
 
 clean:
 	cd bin && rm -f server client
