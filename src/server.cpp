@@ -2,7 +2,7 @@
 #include "chat.h"
 
 #define MAX_QUEUE_SIZE 20
-#define PORT 8081
+#define PORT 8080
 
 int main()
 {

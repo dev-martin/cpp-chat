@@ -1,7 +1,7 @@
 #include <iostream>
 #include "chat.h"
 
-#define SERVER_PORT 8081
+#define SERVER_PORT 8080
 
 int main()
 {
